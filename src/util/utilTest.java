@@ -4,25 +4,55 @@ import java.util.Vector;
 
 public class utilTest {
 	
-	////////////////////////////////////////	
+	////////////////////////////////////////
+
+	 
+	 
+	 
+	 
+	/**
+	* checkString Metodo que verifica si un String pasado como parametro es valido o no.
+	* Un string es valido si solo contiene caracteres de a-z o de A-Z y ademas si su longitid
+	* esta entre 1 y 60.
+	* @param String s es el string a verificar.
+	* @return boolean true si es valido y false en caso contrario.
+	*/
 	public static boolean checkString (String s){
-		return validStrChar(s)&&validStrLength(s);
+		return validStrChar(s)&&validStrLength(s); //Un string valido debe tener longitud menor a 90 y caracteres de a-z o A-Z
 	}
+	/**
+	* validStrLength metodo que verifica si la logitud de un String pasado como parametro es valida o no.
+	* Un string es valido si su longitid esta entre 1 y 60.
+	* @param String s es el string a verificar.
+	* @return boolean true si es valido y false en caso contrario.
+	*/
 	public static boolean validStrLength(String s){
-		return (s.length()<=60);
+		return (s.length()<=60 && s.length()>0); //Un string tiene que tener entre 1 y 60 caracteres
 	}
+	/**
+	* validStrChar metodo que verifica si todos los caracteres de un String pasado como parametro son validos o no.
+	* Un string es valido si todos sus caracteres estan entre la a-z o entre la A-Z
+	* @param String s es el string a verificar.
+	* @return boolean true si es valido y false en caso contrario.
+	*/
 	public static boolean validStrChar(String s){
-        boolean valido = true;
+        boolean valido = true; //Idem al de checkDni se podria verificar la longitud
         char c;
         for (int i = 0; i < s.length() && valido; i++) {
             c = s.charAt(i);
             if (((int)c < 65) || (((int)c)>90 && ((int)c<97)) || ((int)c>122)) {
-            	valido = false;
+            	valido = false; //No esta entre a-z o A-Z del codigo asiic, aunque no dice nada que el nombre deba contener espacios en blancos
             }
         }
         return valido;
 	}
 	////////////////////////////////////////
+	/**
+	* checkDni metodo que verifica si un String pasado como parametro representando un dni es valido o no.
+	* Un dni es valido si cumple con la mascara XX.XXX.XXX donde X debe ser un numero de 0-9
+	* @param String s es el string a verificar.
+	* @return boolean true si es valido y false en caso contrario.
+	*/
 	public static boolean checkDni (String dni){
         boolean valido = (dni.length()==10); //Debe tener 10 digitos como la mascara "XX.XXX.XXX"
         char c;
@@ -64,8 +94,5 @@ public class utilTest {
 	public static boolean checkHour(int hs, int min) {
 		return true;
 	}
-	public static void main(String[] args){
-	   utilTest test = new utilTest();
-	   System.out.println(test.checkDni("32.0.7.476"));
-	}
+
 }
