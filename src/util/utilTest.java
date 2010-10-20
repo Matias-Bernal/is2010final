@@ -4,12 +4,8 @@ import java.util.Vector;
 
 public class utilTest {
 	
-	////////////////////////////////////////
+	///////////////////////////////////////
 
-	 
-	 
-	 
-	 
 	/**
 	* checkString Metodo que verifica si un String pasado como parametro es valido o no.
 	* Un string es valido si solo contiene caracteres de a-z o de A-Z y ademas si su longitid
@@ -20,6 +16,7 @@ public class utilTest {
 	public static boolean checkString (String s){
 		return validStrChar(s)&&validStrLength(s); //Un string valido debe tener longitud menor a 90 y caracteres de a-z o A-Z
 	}
+
 	/**
 	* validStrLength metodo que verifica si la logitud de un String pasado como parametro es valida o no.
 	* Un string es valido si su longitid esta entre 1 y 60.
@@ -29,6 +26,7 @@ public class utilTest {
 	public static boolean validStrLength(String s){
 		return (s.length()<=60 && s.length()>0); //Un string tiene que tener entre 1 y 60 caracteres
 	}
+
 	/**
 	* validStrChar metodo que verifica si todos los caracteres de un String pasado como parametro son validos o no.
 	* Un string es valido si todos sus caracteres estan entre la a-z o entre la A-Z
@@ -47,6 +45,7 @@ public class utilTest {
         return valido;
 	}
 	////////////////////////////////////////
+
 	/**
 	* checkDni metodo que verifica si un String pasado como parametro representando un dni es valido o no.
 	* Un dni es valido si cumple con la mascara XX.XXX.XXX donde X debe ser un numero de 0-9
@@ -75,24 +74,40 @@ public class utilTest {
 		return 0;
 	}
 	////////////////////////////////////////
-	public static float medicPay(Vector<Pair> consultas, float valor, int horasAlquiler, float alquilerxhs){	
-		return 0;
+	private static float medicPay (Vector<Pair> consultas, float valor, int horasAlquiler, float alquilerxhs) {
+		float sueldo = 0;
+		for (int i=0;i<consultas.size();i++) {
+			sueldo += (valor - ((consultas.get(i).getY()*valor)/100)) * consultas.get(i).getX();
+		}
+		sueldo -= (horasAlquiler*alquilerxhs);
+		return sueldo;
 	}
+
 	////////////////////////////////////////
 	public static float totalPay (Float costoDia, Pair[] comidas, Vector<Pair> medicamentos, int dias, Float valorDia ) {
 		return 0;
 	}
+
 	////////////////////////////////////////
 	public static float daysDiff(int diaE,int mesE,int anioE,int hsE,int minE,int diaS,int mesS,int anioS,int hsS,int minS){
 		return 0;
 	}
+
 	////////////////////////////////////////
 	public static float consydesc(int cant, int descuento){
 		return 0;
 	}
+
 	////////////////////////////////////////
 	public static boolean checkHour(int hs, int min) {
 		return true;
+	}
+
+	public static void main(String[] args){
+		Vector<Pair> consultas = new Vector<Pair>();
+		consultas.add(new Pair(1,10));
+		consultas.add(new Pair(2,20));
+		System.out.println("el total es: "+medicPay(consultas,100 ,10,1));
 	}
 
 }
