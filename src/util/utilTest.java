@@ -1,4 +1,5 @@
 package util;
+import java.util.Iterator;
 import java.util.Vector;
 
 
@@ -73,8 +74,9 @@ public class utilTest {
 	public static int hourDiff(int diaE,int mesE,int anioE,int hsE,int minE,int diaS,int mesS,int anioS,int hsS,int minS){
 		return 0;
 	}
+	
 	////////////////////////////////////////
-	private static float medicPay (Vector<Pair> consultas, float valor, int horasAlquiler, float alquilerxhs) {
+	public static float medicPay (Vector<Pair> consultas, float valor, int horasAlquiler, float alquilerxhs) {
 		float sueldo = 0;
 		for (int i=0;i<consultas.size();i++) {
 			sueldo += (valor - ((consultas.get(i).getY()*valor)/100)) * consultas.get(i).getX();
@@ -83,9 +85,32 @@ public class utilTest {
 		return sueldo;
 	}
 
-	////////////////////////////////////////
-	public static float totalPay (Float costoDia, Pair[] comidas, Vector<Pair> medicamentos, int dias, Float valorDia ) {
-		return 0;
+
+	public static float totalPay (Float costoDia, Pair[] comidas, Vector<Pair> medicamentos, int dias, Float descuento ) {
+		if(costoDia <= 0  || dias <= 0 || descuento <= 0)
+			return -1;
+		float valorSinDesc = (costoDia + calcComidas(comidas) + calcMedicamentos(medicamentos)) * dias;
+		return valorSinDesc *  ((100-descuento)/100);
+	}
+	
+	private static float calcComidas(Pair[] comidas) {
+		try {
+			return (comidas[0].getX() * comidas[0].getY()) +
+			       (comidas[1].getX() * comidas[1].getY()) +
+			       (comidas[2].getX() * comidas[2].getY()) +
+			       (comidas[3].getX() * comidas[3].getY());
+		} catch (NullPointerException npe) {
+			return 0;
+		}
+	}
+	
+	private static float calcMedicamentos(Vector<Pair> medicamentos) {
+		float res = 0f;
+		for (Iterator iterator = medicamentos.iterator(); iterator.hasNext();) {
+			Pair medicamento = (Pair) iterator.next();
+			res += medicamento.getX() * medicamento.getY();
+		}
+		return res;
 	}
 
 	////////////////////////////////////////
@@ -104,10 +129,15 @@ public class utilTest {
 	}
 
 	public static void main(String[] args){
-		Vector<Pair> consultas = new Vector<Pair>();
+		/*Vector<Pair> consultas = new Vector<Pair>();
 		consultas.add(new Pair(1,10));
 		consultas.add(new Pair(2,20));
-		System.out.println("el total es: "+medicPay(consultas,100 ,10,1));
+		System.out.println("el total es: "+medicPay(consultas,100 ,10,1));*/
+		Pair[]comidasVacias = new Pair[4];
+		Vector<Pair> medicamentos = new Vector<Pair>();
+		Vector<Pair> medicamentosVacia = new Vector<Pair>();
+
+		System.out.println(utilTest.totalPay(2f,comidasVacias,medicamentosVacia,10,1f));
 	}
 
 }
