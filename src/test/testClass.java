@@ -11,21 +11,22 @@ import util.utilTest;
 
 public class testClass {
 
-	/*@Test
-	public void checkStringTest (String dni){
+	@Test
+	public void checkStringTest (){
 		assertFalse("String incorrecto. Es vacío",utilTest.checkString(""));
 		assertTrue("String correcto",utilTest.checkString("aaa"));
 		assertFalse("String incorrecto. Longitud correcta pero con números en el contenido",utilTest.checkString("2aa"));
-		assertFalse("String incorrecto. Longitud invalida",utilTest.checkString("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"));
+		assertFalse("String incorrecto. Longitud invalida",utilTest.checkString("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"));
 	}
 
 	@Test
-	public void checkDniTest (String dni){
+	public void checkDniTest (){
 		assertTrue("Dni correcto",utilTest.checkDni("10.234.456"));
 		assertFalse("Dni incorrecto. Tiene 10 caracteres correctos pero mal distribuidos",utilTest.checkDni("123.45.678"));
 		assertFalse("Dni incorrecto. Tiene algunas letras",utilTest.checkDni("A2.345.678"));
+		assertFalse("Dni incorrecto. Longitud invalida",utilTest.checkDni("12.345.6788"));
 	}
-
+	/*
 	@Test
 	public void checkDateTest(int diaA,int mes,int año){
 		assertFalse("Dia negativo",utilTest.checkDate(-1, 12, 2010));
@@ -118,7 +119,7 @@ public class testClass {
 		assertEquals("Salida Incorrecta",-1,utilTest.medicPay(consultas,2,2,-1));
 		assertEquals("Salida Correcta",1.1,utilTest.medicPay(consultas,3,2,2));
 	}
-*/
+
 	@Test
 	public void totalPayTest(){
 		Pair[]comidas = new Pair[4];
@@ -155,5 +156,5 @@ public class testClass {
 		assertEquals("Salida Incorrecta",-1, utilTest.totalPay(2f,comidas,medicamentos,-1,1f),1e-2);
 		assertEquals("Salida Correcta", 39.6, utilTest.totalPay(2f,comidas,medicamentos,10,1f),1e-2);
 	}
-
+	*/
 }

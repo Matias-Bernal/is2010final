@@ -15,27 +15,7 @@ public class utilTest {
 	* @return boolean true si es valido y false en caso contrario.
 	*/
 	public static boolean checkString (String s){
-		return validStrChar(s)&&validStrLength(s); //Un string valido debe tener longitud menor a 90 y caracteres de a-z o A-Z
-	}
-
-	/**
-	* validStrLength metodo que verifica si la logitud de un String pasado como parametro es valida o no.
-	* Un string es valido si su longitid esta entre 1 y 60.
-	* @param String s es el string a verificar.
-	* @return boolean true si es valido y false en caso contrario.
-	*/
-	public static boolean validStrLength(String s){
-		return (s.length()<=60 && s.length()>0); //Un string tiene que tener entre 1 y 60 caracteres
-	}
-
-	/**
-	* validStrChar metodo que verifica si todos los caracteres de un String pasado como parametro son validos o no.
-	* Un string es valido si todos sus caracteres estan entre la a-z o entre la A-Z
-	* @param String s es el string a verificar.
-	* @return boolean true si es valido y false en caso contrario.
-	*/
-	public static boolean validStrChar(String s){
-        boolean valido = true; //Idem al de checkDni se podria verificar la longitud
+        boolean valido = (s.length()<=60 && s.length()>0);
         char c;
         for (int i = 0; i < s.length() && valido; i++) {
             c = s.charAt(i);
@@ -45,6 +25,7 @@ public class utilTest {
         }
         return valido;
 	}
+
 	////////////////////////////////////////
 
 	/**
