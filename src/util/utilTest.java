@@ -52,8 +52,58 @@ public class utilTest {
 		return true;
 	}
 	////////////////////////////////////////  
+	
+	/**
+	* hourDiff indica la cantidad de horas de diferencia que hay entre dos fechas.
+	* @param int diaE representa al dia de inicio.
+	* @param int mesE representa al mes de inicio.
+	* @param int anioE representa al anio de inicio.
+	* @param int hsE representa a la hs de inicio.
+	* @param int minS representa a los minutos de fin.
+	* @param int diaS representa al dia de fin.
+	* @param int mesS representa al mes de fin.
+	* @param int anioS representa al anio de fin.
+	* @param int hsS representa a la hs de fin.
+	* @param int minS representa a los minutos de fin.
+	* @param int anio representa el anio a chequear.
+	* @return int que representa la cantidad de horas que hay entre 2 fechas.
+	*/
 	public static int hourDiff(int diaE,int mesE,int anioE,int hsE,int minE,int diaS,int mesS,int anioS,int hsS,int minS){
-		return 0;
+		int acum = 0;
+		if (fechaMenorQueOtra(diaE,mesE,anioE,hsE,minE,diaS,mesS,anioS,hsS,minS)) {
+		while (!(anioE== anioS &&  mesE==mesS && diaE==diaS && hsE==hsS && minE==minS)){
+			acum = acum +1;
+			minE = minE+1;
+			if (minE == 60) {
+				minE = 0;
+				hsE = hsE + 1;
+				if (hsE == 24){
+					hsE = 0;
+					diaE = diaE +1;
+					if (diaE == 29 && mesE == 2 && !esBiciesto(anioE)){
+						diaE = 1;
+						mesE = mesE +1;
+					} else if(diaE == 30 && mesE == 2 && esBiciesto(anioE)){ 
+						diaE = 1;
+						mesE = mesE +1;
+					} else if (diaE == 30 && (mesE == 4 || mesE == 6 || mesE == 9 || mesE == 11)){
+						diaE = 1;
+						mesE = mesE +1;
+					} else if (diaE == 31 && (mesE == 1 || mesE == 3 || mesE == 5 || mesE == 7 || mesE == 8 || mesE == 10 || mesE == 12)){
+						diaE = 1;
+						mesE = mesE +1;
+					}else if (mesE == 13){
+								mesE = 1;
+								anioE = anioE +1;
+							
+					}
+				}
+			}
+		}
+		}else{
+			return -1;
+		}
+		return (acum/60) ;
 	}
 	
 	////////////////////////////////////////
@@ -93,8 +143,22 @@ public class utilTest {
 		}
 		return res;
 	}
-	private static boolean m(int diaE,int mesE,int anioE,int hsE,int minE,int diaS,int mesS,int anioS,int hsS,int minS){
-		
+	
+	/**
+	* fechaMenorQueOtra indica si una fecha es menor que la otra.
+	* @param int diaE representa al dia de inicio.
+	* @param int mesE representa al mes de inicio.
+	* @param int anioE representa al anio de inicio.
+	* @param int hsE representa a la hs de inicio.
+	* @param int minS representa a los minutos de fin.
+	* @param int diaS representa al dia de fin.
+	* @param int mesS representa al mes de fin.
+	* @param int anioS representa al anio de fin.
+	* @param int hsS representa a la hs de fin.
+	* @param int minS representa a los minutos de fin.
+	* @return True si la primera fecha es menor que la segunda o de lo contrario False.
+	*/
+	private static boolean fechaMenorQueOtra(int diaE,int mesE,int anioE,int hsE,int minE,int diaS,int mesS,int anioS,int hsS,int minS){
 		if (anioE == anioS){
 			if (mesE == mesS){
 				if (diaE == diaS){
@@ -124,11 +188,12 @@ public class utilTest {
 		}else {
 			return false;
 		}
-		
-		
 	}
+	
 	/**
-	* daysDiff metodo que calcula la cantidad de horas que hay de diferencia entre dos fechas dadas.
+	* daysDiff permite calcular la cantidad de días que un paciente ha estado internado.
+	* A partir de las 10:00 de la mañana ya se considera un nuevo día, es decir, si el paciente
+	* es dado de alta a las 10:01 ya se le cobra un nuevo día.
 	* @param int diaE representa al dia de inicio.
 	* @param int mesE representa al mes de inicio.
 	* @param int anioE representa al anio de inicio.
@@ -139,66 +204,30 @@ public class utilTest {
 	* @param int anioS representa al anio de fin.
 	* @param int hsS representa a la hs de fin.
 	* @param int minS representa a los minutos de fin.
-	* @return float representando la cantidad de horas que hay de diferencia entre dos fechas dadas.
+	* @return float representando la cantidad de dias de internacion que se le deben cobrar al paciente.
 	*/
 	public static float daysDiff(int diaE,int mesE,int anioE,int hsE,int minE,int diaS,int mesS,int anioS,int hsS,int minS){
-		int auxhsS = hsS;
-		
-		int acum = 0;
-		int acum2 = 0;
-		
-		if (m(diaE,mesE,anioE,hsE,minE,diaS,mesS,anioS,hsS,minS)) {
-		
-		while (!(anioE== anioS &&  mesE==mesS && diaE==diaS && hsE==hsS && minE==minS)){
-			acum = acum +1;
-			minE = minE+1;
-			
-			if (minE == 60) {
-				minE = 0;
-				hsE = hsE + 1;
-				if (hsE == 10) {
-					acum2 = acum2 + 1;
-					}
-				if (hsE == 24){
-					hsE = 0;
-					diaE = diaE +1;
-					
-					
-					if (diaE == 29 && mesE == 2 && !esBiciesto(anioE)){
-						diaE = 1;
-						mesE = mesE +1;
-						
-					} else if(diaE == 30 && mesE == 2 && esBiciesto(anioE)){ 
-						diaE = 1;
-						mesE = mesE +1;
-					} else if (diaE == 30 && (mesE == 4 || mesE == 6 || mesE == 9 || mesE == 11)){
-						diaE = 1;
-						mesE = mesE +1;
-					} else if (diaE == 31 && (mesE == 1 || mesE == 3 || mesE == 5 || mesE == 7 || mesE == 8 || mesE == 10 || mesE == 12)){
-						diaE = 1;
-						mesE = mesE +1;
-					}else if (mesE == 13){
-								mesE = 1;
-								anioE = anioE +1;
-							
-					}
+		int hs = hourDiff(diaE,mesE,anioE,hsE, minE, diaS, mesS, anioS, hsS, minS);
+		float res = 1;
+		if (!(hs == -1)){
+				res = hs / 24;  
+				if (hsS > 10){
+					res = res + 1;
 				}
-			}
-								System.out.println(diaE + "/"+mesE +"/"+anioE+" "+ hsE+":"+ minE );
-				
-		}
-		if (auxhsS > 10){ 
-			acum2 = acum2 +1;
-		}
+				if (hsE < 10) {
+					res = res + 1;
+				}
 		}else{
-			acum2= -1;
-			
+			res = -1;
 		}
-			return acum2 ;
-		
+		return res;
 	}
 	
-	
+	/**
+	* esBiciesto indica si un anio es biciesto.
+	* @param int anio representa el anio a chequear.
+	* @return True si el anio es biciesto o de lo contrario False.
+	*/
 	private static boolean esBiciesto(int anio){
 		boolean res = true;
 		if (anio % 400 == 0){
@@ -237,7 +266,7 @@ public class utilTest {
 		//System.out.println(daysDiff(12,11,1987,8,0,15,11,1987,,0));
 		
 		
-		System.out.println(daysDiff(12,11,1987,9,0,15,11,1987,8,0));
+//		System.out.println(hourDiff(20,10,2010,10,00,25,10,2010,12,00));
 	}
 
 }
