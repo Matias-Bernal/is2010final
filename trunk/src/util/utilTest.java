@@ -93,11 +93,126 @@ public class utilTest {
 		}
 		return res;
 	}
-
-	////////////////////////////////////////
-	public static float daysDiff(int diaE,int mesE,int anioE,int hsE,int minE,int diaS,int mesS,int anioS,int hsS,int minS){
-		return 0;
+	private static boolean m(int diaE,int mesE,int anioE,int hsE,int minE,int diaS,int mesS,int anioS,int hsS,int minS){
+		
+		if (anioE == anioS){
+			if (mesE == mesS){
+				if (diaE == diaS){
+					if (hsE == hsS){
+						if (minS <= minS){
+							return true;
+						}else{
+							return false;
+						}
+					}else if (hsE < hsS){
+						return true; 
+					}else{
+						return false;
+					}
+				}else if (diaE < diaS){
+					return true;
+				}else{
+					return false;
+				}
+			}else if(mesE < mesS){
+				return true;
+			}else{
+				return false;
+			}
+		}else if (anioE < anioS){
+			return true;
+		}else {
+			return false;
+		}
+		
+		
 	}
+	/**
+	* daysDiff metodo que calcula la cantidad de horas que hay de diferencia entre dos fechas dadas.
+	* @param int diaE representa al dia de inicio.
+	* @param int mesE representa al mes de inicio.
+	* @param int anioE representa al anio de inicio.
+	* @param int hsE representa a la hs de inicio.
+	* @param int minS representa a los minutos de fin.
+	* @param int diaS representa al dia de fin.
+	* @param int mesS representa al mes de fin.
+	* @param int anioS representa al anio de fin.
+	* @param int hsS representa a la hs de fin.
+	* @param int minS representa a los minutos de fin.
+	* @return float representando la cantidad de horas que hay de diferencia entre dos fechas dadas.
+	*/
+	public static float daysDiff(int diaE,int mesE,int anioE,int hsE,int minE,int diaS,int mesS,int anioS,int hsS,int minS){
+		int auxhsS = hsS;
+		
+		int acum = 0;
+		int acum2 = 0;
+		
+		if (m(diaE,mesE,anioE,hsE,minE,diaS,mesS,anioS,hsS,minS)) {
+		
+		while (!(anioE== anioS &&  mesE==mesS && diaE==diaS && hsE==hsS && minE==minS)){
+			acum = acum +1;
+			minE = minE+1;
+			
+			if (minE == 60) {
+				minE = 0;
+				hsE = hsE + 1;
+				if (hsE == 10) {
+					acum2 = acum2 + 1;
+					}
+				if (hsE == 24){
+					hsE = 0;
+					diaE = diaE +1;
+					
+					
+					if (diaE == 29 && mesE == 2 && !esBiciesto(anioE)){
+						diaE = 1;
+						mesE = mesE +1;
+						
+					} else if(diaE == 30 && mesE == 2 && esBiciesto(anioE)){ 
+						diaE = 1;
+						mesE = mesE +1;
+					} else if (diaE == 30 && (mesE == 4 || mesE == 6 || mesE == 9 || mesE == 11)){
+						diaE = 1;
+						mesE = mesE +1;
+					} else if (diaE == 31 && (mesE == 1 || mesE == 3 || mesE == 5 || mesE == 7 || mesE == 8 || mesE == 10 || mesE == 12)){
+						diaE = 1;
+						mesE = mesE +1;
+					}else if (mesE == 13){
+								mesE = 1;
+								anioE = anioE +1;
+							
+					}
+				}
+			}
+								System.out.println(diaE + "/"+mesE +"/"+anioE+" "+ hsE+":"+ minE );
+				
+		}
+		if (auxhsS > 10){ 
+			acum2 = acum2 +1;
+		}
+		}else{
+			acum2= -1;
+			
+		}
+			return acum2 ;
+		
+	}
+	
+	
+	private static boolean esBiciesto(int anio){
+		boolean res = true;
+		if (anio % 400 == 0){
+	       res = true;
+		} else if (anio % 100 == 0){
+	       res = false;
+		}else if (anio % 4 == 0){
+	       res = true;
+		}else{
+			res= false;
+		}
+		return res;
+	}
+	
 
 	////////////////////////////////////////
 	public static float consydesc(int cant, int descuento){
@@ -114,11 +229,15 @@ public class utilTest {
 		consultas.add(new Pair(1,10));
 		consultas.add(new Pair(2,20));
 		System.out.println("el total es: "+medicPay(consultas,100 ,10,1));*/
-		Pair[]comidasVacias = new Pair[4];
-		Vector<Pair> medicamentos = new Vector<Pair>();
-		Vector<Pair> medicamentosVacia = new Vector<Pair>();
-
-		System.out.println(utilTest.totalPay(2f,comidasVacias,medicamentosVacia,10,1f));
+//		Pair[]comidasVacias = new Pair[4];
+//		Vector<Pair> medicamentos = new Vector<Pair>();
+//		Vector<Pair> medicamentosVacia = new Vector<Pair>();
+//
+//		System.out.println(utilTest.totalPay(2f,comidasVacias,medicamentosVacia,10,1f));
+		//System.out.println(daysDiff(12,11,1987,8,0,15,11,1987,,0));
+		
+		
+		System.out.println(daysDiff(12,11,1987,9,0,15,11,1987,8,0));
 	}
 
 }
