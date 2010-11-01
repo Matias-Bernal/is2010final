@@ -2,7 +2,6 @@ package util;
 import java.util.Iterator;
 import java.util.Vector;
 
-//probando
 public class utilTest {
 	
 	///////////////////////////////////////
@@ -49,7 +48,39 @@ public class utilTest {
 	}
 	////////////////////////////////////////
 	public static boolean checkDate (int diaA,int mes,int anio){
-		return true;
+		boolean res;
+		if(anio>=0){
+			if (esBiciesto(anio)){
+				if (mes==2){
+					res = (diaA>0&&diaA<30);
+				}else{
+					if((mes==1)||(mes==3)||(mes==5)||(mes==7)||(mes==8)||(mes==10)||(mes==12)){
+						res=(diaA>0&&diaA<=31);
+					}else{
+						if((mes==4)||(mes==6)||(mes==9)||(mes==11)){
+							res=(diaA>0&&diaA<31);
+						}else
+							res=false;
+					}
+				}
+			}else{ //anio no bicisto
+				if (mes==2){
+					res = (diaA>0&&diaA<29);
+				}else{
+					if((mes==1)||(mes==3)||(mes==5)||(mes==7)||(mes==8)||(mes==10)||(mes==12)){
+						res=(diaA>0&&diaA<=31);
+					}else{
+						if((mes==4)||(mes==6)||(mes==9)||(mes==11)){
+							res=(diaA>0&&diaA<31);
+						}else
+							res=false;
+					}
+				}
+			}
+		}else{
+			res=false;
+		}
+		return res;
 	}
 	////////////////////////////////////////  
 	
@@ -109,11 +140,15 @@ public class utilTest {
 	////////////////////////////////////////
 	public static float medicPay (Vector<Pair> consultas, float valor, int horasAlquiler, float alquilerxhs) {
 		float sueldo = 0;
-		for (int i=0;i<consultas.size();i++) {
-			sueldo += (valor - ((consultas.get(i).getY()*valor)/100)) * consultas.get(i).getX();
+		if ((valor>=0)&&(horasAlquiler>=0)&&(alquilerxhs>=0)&&(!consultas.isEmpty())){
+			for (int i=0;i<consultas.size();i++) {
+				sueldo += (valor - ((consultas.get(i).getY()*valor)/100)) * consultas.get(i).getX();
+			}
+			sueldo -= (horasAlquiler*alquilerxhs);
+			return sueldo;
+		}else{
+			return -1;
 		}
-		sueldo -= (horasAlquiler*alquilerxhs);
-		return sueldo;
 	}
 
 
@@ -206,19 +241,17 @@ public class utilTest {
 	* @param int minS representa a los minutos de fin.
 	* @return float representando la cantidad de dias de internacion que se le deben cobrar al paciente.
 	*/
-	public static float daysDiff(int diaE,int mesE,int anioE,int hsE,int minE,int diaS,int mesS,int anioS,int hsS,int minS){
+	public static int daysDiff(int diaE,int mesE,int anioE,int hsE,int minE,int diaS,int mesS,int anioS,int hsS,int minS){
 		int hs = hourDiff(diaE,mesE,anioE,hsE, minE, diaS, mesS, anioS, hsS, minS);
-		float res = 1;
-		if (!(hs == -1)){
-				res = hs / 24;  
+		int res = -1;
+		if (hs != -1){
+				res = hs / 24;
 				if (hsS > 10){
 					res = res + 1;
 				}
 				if (hsE < 10) {
 					res = res + 1;
 				}
-		}else{
-			res = -1;
 		}
 		return res;
 	}
@@ -244,29 +277,13 @@ public class utilTest {
 	
 
 	////////////////////////////////////////
-	public static float consydesc(int cant, int descuento){
-		return 0;
-	}
+//	public static float consydesc(int cant, int descuento){
+//		return 0;
+//	}
 
 	////////////////////////////////////////
-	public static boolean checkHour(int hs, int min) {
-		return true;
-	}
-
-	public static void main(String[] args){
-		/*Vector<Pair> consultas = new Vector<Pair>();
-		consultas.add(new Pair(1,10));
-		consultas.add(new Pair(2,20));
-		System.out.println("el total es: "+medicPay(consultas,100 ,10,1));*/
-//		Pair[]comidasVacias = new Pair[4];
-//		Vector<Pair> medicamentos = new Vector<Pair>();
-//		Vector<Pair> medicamentosVacia = new Vector<Pair>();
-//
-//		System.out.println(utilTest.totalPay(2f,comidasVacias,medicamentosVacia,10,1f));
-		//System.out.println(daysDiff(12,11,1987,8,0,15,11,1987,,0));
-		
-		
-//		System.out.println(hourDiff(20,10,2010,10,00,25,10,2010,12,00));
+	public static boolean checkHour(int hs, int min){
+		return ((min>=0&&min<=59)&&(hs>=0&&hs<=23));
 	}
 
 }
