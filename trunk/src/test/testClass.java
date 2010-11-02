@@ -3,45 +3,53 @@
 *
 *<center><b>Proyecto de Ingenieria de Software 2010</b></center>
 *<br>
-*
+*<center>
 *  Relaciones entre clases por medio de un diagrama de lineas de dot:
 *  \dot
-*  digraph example {
+*	digraph proyectoIS2010 {
 *	node [shape=record, fontname=Helvetica, fontsize=10];
-*	a [ label="testClass" URL="\ref util.testClass"];
+*	a [ label="testClass" URL="\ref test.testClass"];
 * 	b [ label="utilTest" URL="\ref util.utilTest"];
 *	c [ label="Pair" URL="\ref util.Pair"];
 *	a -> b [ arrowhead="open", style="dashed" ];
 *	a -> c [ arrowhead="open", style="dashed" ];
 *	b -> c [ arrowhead="open", style="dashed" ];
-*  }
+*  	}
 *  \enddot
-*  Nota: las clases en el grafico son clickables 
-*  (en salida HTML).
-* 
+*</center>
+*<i><center>Nota: para mas informacion click en las clases del grafico</center></i> 
+*
+*<center>
+*<b>AUTORES</b>
+*<br>
+*<br>
+*BERNAL, Matias
+*<br>
+*BRESSAN, Gonzalo
+*<br>
+*JAULE, Marcos
+*<br>
+*ODORIZZI, Eduardo
+*</center>
+*<br>
+*<center><img src="unrc.jpg" alt="UNRC" width="80px" heigth="120px"></center>
+*<br>
+*<center>
+*<a href="http://is2010final.googlecode.com" target="_blank">Repositorio SVN en Google Code</a>
+*</center>
 *
 *
 *
-* @author 	BERNAL, Matias\n
+*@file testClass.java
+*
+*@brief Este archivos contiene la implementacion de las pruebas.
+*
+*@author 	BERNAL, Matias\n
 *		  	BRESSAN, Gonzalo\n
 *			JAULE, Marcos\n
 *			ODORIZZI, Eduardo
 *
-*<br>
-*<center><img src="unrc.jpg" alt="UNRC" width="80px" heigth="120px"> </center>
-*<br>
-* <a href="http://is2010final.googlecode.com" target="_blank">Repositorio SVN en Google Code</a>
-*
-* @file testClass.java
-*
-* @brief Este archivos contiene la implementacion de las pruebas.
-*
-* @author 	BERNAL, Matias\n
-*		  	BRESSAN, Gonzalo\n
-*			JAULE, Marcos\n
-*			ODORIZZI, Eduardo
-*
-* @date November, 1st 2010
+*@date November, 1st 2010
 **/
 package test;
 
