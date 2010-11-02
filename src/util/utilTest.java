@@ -1,13 +1,39 @@
+/**
+* @file utilTest.java
+*
+* @brief This file contains the DoxygenExample class with the main() function.
+*
+* @author Philipp Bank, www.cypax.net\n
+*
+* @date June, 18th 2006 - first version
+* @date June, 19th 2006 - some modifications, multi-threading
+*
+**/
+
+
 package util;
 import java.util.Iterator;
 import java.util.Vector;
 
+/**
+* @class utilTest
+* 
+* @brief The DoxygenExample class extends the Frame class, provides a graphical user interface (GUI) and includes main().
+*
+* This class, extending the Frame class, contains the main() function, which will create a new DoxygenExample frame instance.<br>
+* The program will sort integer arrays with:
+* <ul> 
+*   <li> a <a href="http://en.wikipedia.org/wiki/Selection_sort">selectionsort</a> algorithm</li>
+*   <li> a <a href="http://en.wikipedia.org/wiki/Insertion_sort">insertionsort</a> algorithm</li>
+*   <li> a <a href="http://en.wikipedia.org/wiki/Bubblesort">bubblesort</a> algorithm</li>
+* </ul>
+* The algorithms are executed as threads and can be started simultaneously or separately.<br>
+* To visualize the processes, the integer arrays will be shown as colored lines.
+*/
 public class utilTest {
 	
-	///////////////////////////////////////
-
 	/**
-	* checkString Metodo que verifica si un String pasado como parametro es valido o no.
+	* @brief checkString Metodo que verifica si un String pasado como parametro es valido o no.
 	* Un string es valido si solo contiene caracteres de a-z o de A-Z y ademas si su longitid
 	* esta entre 1 y 60.
 	* @param String s es el string a verificar.
@@ -24,8 +50,6 @@ public class utilTest {
         }
         return valido;
 	}
-
-	////////////////////////////////////////
 
 	/**
 	* checkDni metodo que verifica si un String pasado como parametro representando un dni es valido o no.
@@ -46,7 +70,8 @@ public class utilTest {
         }
         return valido;
 	}
-	////////////////////////////////////////
+
+
 	public static boolean checkDate (int diaA,int mes,int anio){
 		boolean res;
 		if(anio>=0){
@@ -82,8 +107,7 @@ public class utilTest {
 		}
 		return res;
 	}
-	////////////////////////////////////////  
-	
+
 	/**
 	* hourDiff indica la cantidad de horas de diferencia que hay entre dos fechas.
 	* @param int diaE representa al dia de inicio.
@@ -137,7 +161,6 @@ public class utilTest {
 		return (acum/60) ;
 	}
 	
-	////////////////////////////////////////
 	public static float medicPay (Vector<Pair> consultas, float valor, int horasAlquiler, float alquilerxhs) {
 		float sueldo = 0;
 		if ((valor>=0)&&(horasAlquiler>=0)&&(alquilerxhs>=0)&&(!consultas.isEmpty())){
