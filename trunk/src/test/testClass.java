@@ -1,7 +1,6 @@
 /** @mainpage Test Class
 *
-* Este programa implementa unas validaciones con la herramienta jUnit de la clase utilTest,
-* <br>This program will sort arrays of integer by using different sorting algorithms.
+* Este programa implementa unas validaciones con la herramienta jUnit de la clase utilTest.
 *
 * <img src="unrc.jpg" alt="UNRC">
 *
