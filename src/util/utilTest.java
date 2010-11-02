@@ -3,11 +3,12 @@
 *
 * @brief This file contains the DoxygenExample class with the main() function.
 *
-* @author Philipp Bank, www.cypax.net\n
+* @author 	BERNAL, Matias\n
+*		  	BRESSAN, Gonzalo\n
+*			JAULE, Marcos\n
+*			ODORIZZI, Eduardo
 *
-* @date June, 18th 2006 - first version
-* @date June, 19th 2006 - some modifications, multi-threading
-*
+* @date November, 1st 2010
 **/
 
 
@@ -18,17 +19,9 @@ import java.util.Vector;
 /**
 * @class utilTest
 * 
-* @brief The DoxygenExample class extends the Frame class, provides a graphical user interface (GUI) and includes main().
+* @brief La clase utilTest declara una serie de metodos para realizar validaciones de, entre otros,<br>
+* Cadenas, Fechas, Tiempo transcurrido.
 *
-* This class, extending the Frame class, contains the main() function, which will create a new DoxygenExample frame instance.<br>
-* The program will sort integer arrays with:
-* <ul> 
-*   <li> a <a href="http://en.wikipedia.org/wiki/Selection_sort">selectionsort</a> algorithm</li>
-*   <li> a <a href="http://en.wikipedia.org/wiki/Insertion_sort">insertionsort</a> algorithm</li>
-*   <li> a <a href="http://en.wikipedia.org/wiki/Bubblesort">bubblesort</a> algorithm</li>
-* </ul>
-* The algorithms are executed as threads and can be started simultaneously or separately.<br>
-* To visualize the processes, the integer arrays will be shown as colored lines.
 */
 public class utilTest {
 	
@@ -71,7 +64,13 @@ public class utilTest {
         return valido;
 	}
 
-
+	/**
+	 * 
+	 * @param diaA
+	 * @param mes
+	 * @param anio
+	 * @return
+	 */
 	public static boolean checkDate (int diaA,int mes,int anio){
 		boolean res;
 		if(anio>=0){
@@ -161,6 +160,14 @@ public class utilTest {
 		return (acum/60) ;
 	}
 	
+	/**
+	 * 
+	 * @param consultas
+	 * @param valor
+	 * @param horasAlquiler
+	 * @param alquilerxhs
+	 * @return
+	 */
 	public static float medicPay (Vector<Pair> consultas, float valor, int horasAlquiler, float alquilerxhs) {
 		float sueldo = 0;
 		if ((valor>=0)&&(horasAlquiler>=0)&&(alquilerxhs>=0)&&(!consultas.isEmpty())){
@@ -174,7 +181,15 @@ public class utilTest {
 		}
 	}
 
-
+	/**
+	 * 
+	 * @param costoDia
+	 * @param comidas
+	 * @param medicamentos
+	 * @param dias
+	 * @param descuento
+	 * @return
+	 */
 	public static float totalPay (Float costoDia, Pair[] comidas, Vector<Pair> medicamentos, int dias, Float descuento ) {
 		if(costoDia <= 0  || dias <= 0 || descuento <= 0)
 			return -1;
@@ -182,6 +197,13 @@ public class utilTest {
 		return valorSinDesc *  ((100-descuento)/100);
 	}
 	
+	/**
+	 * Calcula el costo de las cuatro comidas.
+	 * Suma la cantidad cada uno de las comidad (desayuno, almuerzo, merienda, cena)<br>
+	 * por su valor unitario. 
+	 * @param comidas
+	 * @return res
+	 */
 	private static float calcComidas(Pair[] comidas) {
 		try {
 			return (comidas[0].getX() * comidas[0].getY()) +
@@ -193,6 +215,12 @@ public class utilTest {
 		}
 	}
 	
+	/**
+	 * Calcula el costo de los medicamentos<br>
+	 * Suma la cantidad cada uno de los medicamentos por su valor unitario. 
+	 * @param medicamentos
+	 * @return res
+	 */
 	private static float calcMedicamentos(Vector<Pair> medicamentos) {
 		float res = 0f;
 		for (Iterator iterator = medicamentos.iterator(); iterator.hasNext();) {
@@ -298,13 +326,11 @@ public class utilTest {
 		return res;
 	}
 	
-
-	////////////////////////////////////////
-//	public static float consydesc(int cant, int descuento){
-//		return 0;
-//	}
-
-	////////////////////////////////////////
+	/**
+	 * checkHour comprueba que la hora pasada como parametro es correcta<br>
+	 * @param hs hora
+	 * @param min minutos
+	 */
 	public static boolean checkHour(int hs, int min){
 		return ((min>=0&&min<=59)&&(hs>=0&&hs<=23));
 	}
