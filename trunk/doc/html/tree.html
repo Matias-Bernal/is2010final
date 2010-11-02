@@ -87,7 +87,7 @@
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -99,6 +99,19 @@
     <div class="directory">
       <h3 class="swap"><span>is2010final</span></h3>
       <div style="display: block;">
+        <p><img src="ftv2node.png" alt="o" width="16" height="22" /><img src="ftv2doc.png" alt="*" width="24" height="22" /><a class="el" href="main.html" target="basefrm">Página principal</a></p>
+        <p><img src="ftv2pnode.png" alt="o" width="16" height="22" onclick="toggleFolder('folder1', this)"/><img src="ftv2folderclosed.png" alt="+" width="24" height="22" onclick="toggleFolder('folder1', this)"/><a class="el" href="annotated.html" target="basefrm">Lista de clases</a></p>
+        <div id="folder1">
+          <p><img src="ftv2vertline.png" alt="|" width="16" height="22" /><img src="ftv2node.png" alt="o" width="16" height="22" /><img src="ftv2doc.png" alt="*" width="24" height="22" /><a class="el" href="classutil_1_1_pair.html" target="basefrm">util.Pair</a></p>
+          <p><img src="ftv2vertline.png" alt="|" width="16" height="22" /><img src="ftv2lastnode.png" alt="\" width="16" height="22" /><img src="ftv2doc.png" alt="*" width="24" height="22" /><a class="el" href="classutil_1_1util_test.html" target="basefrm">util.utilTest</a></p>
+        </div>
+        <p><img src="ftv2node.png" alt="o" width="16" height="22" /><img src="ftv2doc.png" alt="*" width="24" height="22" /><a class="el" href="functions.html" target="basefrm">Miembros de las clases</a></p>
+        <p><img src="ftv2plastnode.png" alt="\" width="16" height="22" onclick="toggleFolder('folder2', this)"/><img src="ftv2folderclosed.png" alt="+" width="24" height="22" onclick="toggleFolder('folder2', this)"/><a class="el" href="files.html" target="basefrm">Lista de archivos</a></p>
+        <div id="folder2">
+          <p><img src="ftv2blank.png" alt="&#160;" width="16" height="22" /><img src="ftv2node.png" alt="o" width="16" height="22" /><img src="ftv2doc.png" alt="*" width="24" height="22" /><a class="el" href="test_class_8java.html" target="basefrm">src/test/testClass.java</a></p>
+          <p><img src="ftv2blank.png" alt="&#160;" width="16" height="22" /><img src="ftv2node.png" alt="o" width="16" height="22" /><img src="ftv2doc.png" alt="*" width="24" height="22" /><a class="el" href="_pair_8java.html" target="basefrm">src/util/Pair.java</a></p>
+          <p><img src="ftv2blank.png" alt="&#160;" width="16" height="22" /><img src="ftv2lastnode.png" alt="\" width="16" height="22" /><img src="ftv2doc.png" alt="*" width="24" height="22" /><a class="el" href="util_test_8java.html" target="basefrm">src/util/utilTest.java</a></p>
+        </div>
       </div>
     </div>
   </body>
