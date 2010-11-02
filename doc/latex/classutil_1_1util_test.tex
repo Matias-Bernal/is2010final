@@ -1,37 +1,40 @@
-\section{Referencia de la Clase util.utilTest}
+\hypertarget{classutil_1_1util_test}{
+\section{util.utilTest Class Reference}
 \label{classutil_1_1util_test}\index{util::utilTest@{util::utilTest}}
+}
 
 
-La clase \doxyref{utilTest}{p.}{classutil_1_1util_test} declara una serie de metodos para realizar validaciones de, entre otros,\par
+La clase \hyperlink{classutil_1_1util_test}{utilTest} declara una serie de metodos para realizar validaciones de, entre otros,\par
  Cadenas, Fechas, Tiempo transcurrido.  
 
 
-\subsection*{M√©todos p√∫blicos est√°ticos}
+\subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static boolean {\bf checkString} (String s)
+static boolean \hyperlink{classutil_1_1util_test_a0511fb76ddd99ce9c98231108be97d5a}{checkString} (String s)
 \begin{DoxyCompactList}\small\item\em checkString Metodo que verifica si un String pasado como parametro es valido o no. Un string es valido si solo contiene caracteres de a-\/z o de A-\/Z y ademas si su longitid esta entre 1 y 60. \item\end{DoxyCompactList}\item 
-static boolean {\bf checkDni} (String dni)
+static boolean \hyperlink{classutil_1_1util_test_a2c5fbf1f9fb195eb5ff80229cc99c394}{checkDni} (String dni)
 \item 
-static boolean {\bf checkDate} (int diaA, int mes, int anio)
+static boolean \hyperlink{classutil_1_1util_test_af38bbc6684ef93d7cd3580df593b1e6a}{checkDate} (int diaA, int mes, int anio)
 \item 
-static int {\bf hourDiff} (int diaE, int mesE, int anioE, int hsE, int minE, int diaS, int mesS, int anioS, int hsS, int minS)
+static int \hyperlink{classutil_1_1util_test_aaa8556f9ef98f63b750e50af6c3484d1}{hourDiff} (int diaE, int mesE, int anioE, int hsE, int minE, int diaS, int mesS, int anioS, int hsS, int minS)
 \item 
-static float {\bf medicPay} (Vector$<$ {\bf Pair} $>$ consultas, float valor, int horasAlquiler, float alquilerxhs)
+static float \hyperlink{classutil_1_1util_test_a991f47fa2395bca0ddc28abb2ca2950f}{medicPay} (Vector$<$ \hyperlink{classutil_1_1_pair}{Pair} $>$ consultas, float valor, int horasAlquiler, float alquilerxhs)
 \item 
-static float {\bf totalPay} (Float costoDia, {\bf Pair}[$\,$] comidas, Vector$<$ {\bf Pair} $>$ medicamentos, int dias, Float descuento)
+static float \hyperlink{classutil_1_1util_test_a525d627e3d989ff9190a69fe6bccffff}{totalPay} (Float costoDia, \hyperlink{classutil_1_1_pair}{Pair}\mbox{[}$\,$\mbox{]} comidas, Vector$<$ \hyperlink{classutil_1_1_pair}{Pair} $>$ medicamentos, int dias, Float descuento)
 \item 
-static int {\bf daysDiff} (int diaE, int mesE, int anioE, int hsE, int minE, int diaS, int mesS, int anioS, int hsS, int minS)
+static int \hyperlink{classutil_1_1util_test_a9e7d593af72519ead8d188becaa1c671}{daysDiff} (int diaE, int mesE, int anioE, int hsE, int minE, int diaS, int mesS, int anioS, int hsS, int minS)
 \item 
-static boolean {\bf checkHour} (int hs, int min)
+static boolean \hyperlink{classutil_1_1util_test_a778f4f1a2c59966aa2aae9011bde2ca8}{checkHour} (int hs, int min)
 \end{DoxyCompactItemize}
 
 
-\subsection{Descripci√≥n detallada}
-La clase \doxyref{utilTest}{p.}{classutil_1_1util_test} declara una serie de metodos para realizar validaciones de, entre otros,\par
+\subsection{Detailed Description}
+La clase \hyperlink{classutil_1_1util_test}{utilTest} declara una serie de metodos para realizar validaciones de, entre otros,\par
  Cadenas, Fechas, Tiempo transcurrido. 
 
-\subsection{Documentaci√≥n de las funciones miembro}
+\subsection{Member Function Documentation}
+\hypertarget{classutil_1_1util_test_af38bbc6684ef93d7cd3580df593b1e6a}{
 \index{util::utilTest@{util::utilTest}!checkDate@{checkDate}}
 \index{checkDate@{checkDate}!util::utilTest@{util::utilTest}}
 \subsubsection[{checkDate}]{\setlength{\rightskip}{0pt plus 5cm}static boolean util.utilTest.checkDate (
@@ -40,12 +43,13 @@ La clase \doxyref{utilTest}{p.}{classutil_1_1util_test} declara una serie de met
 \item[{int}]{ mes, }
 \item[{int}]{ anio}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  [static]}}\label{classutil_1_1util_test_af38bbc6684ef93d7cd3580df593b1e6a}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classutil_1_1util_test_af38bbc6684ef93d7cd3580df593b1e6a}
 checkDate valida que la fecha ingresada sea correcta.\par
  una fecha es correcta si el dia es menor que 28 para el mes 2 o 29 en caso de que el aÒo sea bisiesto.\par
  el dia es menor o igual que 30 para los meses: 1, 3, 5, 7, 8, 10 y 12\par
  o el dia es menor o igual que 31 para los meses: 4, 6, 9 y 11. 
-\begin{DoxyParams}{Par√°metros}
+\begin{DoxyParams}{Parameters}
 {\em diaA} & \\
 \hline
 {\em mes} & \\
@@ -53,24 +57,51 @@ checkDate valida que la fecha ingresada sea correcta.\par
 {\em anio} & \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Devuelve}
+\begin{DoxyReturn}{Returns}
 true si es valido, false si no lo es 
 \end{DoxyReturn}
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=376pt]{classutil_1_1util_test_af38bbc6684ef93d7cd3580df593b1e6a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classutil_1_1util_test_a2c5fbf1f9fb195eb5ff80229cc99c394}{
 \index{util::utilTest@{util::utilTest}!checkDni@{checkDni}}
 \index{checkDni@{checkDni}!util::utilTest@{util::utilTest}}
 \subsubsection[{checkDni}]{\setlength{\rightskip}{0pt plus 5cm}static boolean util.utilTest.checkDni (
 \begin{DoxyParamCaption}
 \item[{String}]{ dni}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  [static]}}\label{classutil_1_1util_test_a2c5fbf1f9fb195eb5ff80229cc99c394}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classutil_1_1util_test_a2c5fbf1f9fb195eb5ff80229cc99c394}
 checkDni metodo que verifica si un String pasado como parametro representando un dni es valido o no. Un dni es valido si cumple con la mascara XX.XXX.XXX donde X debe ser un numero de 0-\/9 
-\begin{DoxyParams}{Par√°metros}
+\begin{DoxyParams}{Parameters}
 {\em String} & s es el string a verificar. \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Devuelve}
+\begin{DoxyReturn}{Returns}
 boolean true si es valido y false en caso contrario. 
 \end{DoxyReturn}
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=364pt]{classutil_1_1util_test_a2c5fbf1f9fb195eb5ff80229cc99c394_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classutil_1_1util_test_a778f4f1a2c59966aa2aae9011bde2ca8}{
 \index{util::utilTest@{util::utilTest}!checkHour@{checkHour}}
 \index{checkHour@{checkHour}!util::utilTest@{util::utilTest}}
 \subsubsection[{checkHour}]{\setlength{\rightskip}{0pt plus 5cm}static boolean util.utilTest.checkHour (
@@ -78,34 +109,62 @@ boolean true si es valido y false en caso contrario.
 \item[{int}]{ hs, }
 \item[{int}]{ min}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  [static]}}\label{classutil_1_1util_test_a778f4f1a2c59966aa2aae9011bde2ca8}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classutil_1_1util_test_a778f4f1a2c59966aa2aae9011bde2ca8}
 checkHour comprueba que la hora pasada como parametro es correcta\par
  
-\begin{DoxyParams}{Par√°metros}
+\begin{DoxyParams}{Parameters}
 {\em hs} & hora \\
 \hline
 {\em min} & minutos \\
 \hline
 \end{DoxyParams}
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=358pt]{classutil_1_1util_test_a778f4f1a2c59966aa2aae9011bde2ca8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classutil_1_1util_test_a0511fb76ddd99ce9c98231108be97d5a}{
 \index{util::utilTest@{util::utilTest}!checkString@{checkString}}
 \index{checkString@{checkString}!util::utilTest@{util::utilTest}}
 \subsubsection[{checkString}]{\setlength{\rightskip}{0pt plus 5cm}static boolean util.utilTest.checkString (
 \begin{DoxyParamCaption}
 \item[{String}]{ s}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  [static]}}\label{classutil_1_1util_test_a0511fb76ddd99ce9c98231108be97d5a}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classutil_1_1util_test_a0511fb76ddd99ce9c98231108be97d5a}
 
 
 checkString Metodo que verifica si un String pasado como parametro es valido o no. Un string es valido si solo contiene caracteres de a-\/z o de A-\/Z y ademas si su longitid esta entre 1 y 60. 
 
 
-\begin{DoxyParams}{Par√°metros}
+\begin{DoxyParams}{Parameters}
 {\em String} & s es el string a verificar. \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Devuelve}
+\begin{DoxyReturn}{Returns}
 boolean true si es valido y false en caso contrario. 
 \end{DoxyReturn}
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=388pt]{classutil_1_1util_test_a0511fb76ddd99ce9c98231108be97d5a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classutil_1_1util_test_a9e7d593af72519ead8d188becaa1c671}{
 \index{util::utilTest@{util::utilTest}!daysDiff@{daysDiff}}
 \index{daysDiff@{daysDiff}!util::utilTest@{util::utilTest}}
 \subsubsection[{daysDiff}]{\setlength{\rightskip}{0pt plus 5cm}static int util.utilTest.daysDiff (
@@ -121,9 +180,10 @@ boolean true si es valido y false en caso contrario.
 \item[{int}]{ hsS, }
 \item[{int}]{ minS}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  [static]}}\label{classutil_1_1util_test_a9e7d593af72519ead8d188becaa1c671}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classutil_1_1util_test_a9e7d593af72519ead8d188becaa1c671}
 daysDiff permite calcular la cantidad de dÌas que un paciente ha estado internado. A partir de las 10:00 de la maÒana ya se considera un nuevo dÌa, es decir, si el paciente es dado de alta a las 10:01 ya se le cobra un nuevo dÌa. 
-\begin{DoxyParams}{Par√°metros}
+\begin{DoxyParams}{Parameters}
 {\em int} & diaE representa al dia de inicio. \\
 \hline
 {\em int} & mesE representa al mes de inicio. \\
@@ -145,12 +205,13 @@ daysDiff permite calcular la cantidad de dÌas que un paciente ha estado internad
 {\em int} & minS representa a los minutos de fin. \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Devuelve}
+\begin{DoxyReturn}{Returns}
 float representando la cantidad de dias de internacion que se le deben cobrar al paciente. 
 \end{DoxyReturn}
 
 
-Gr√°fico de llamadas para esta funci√≥n:\nopagebreak
+Here is the call graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -159,6 +220,19 @@ Gr√°fico de llamadas para esta funci√≥n:\nopagebreak
 \end{figure}
 
 
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{classutil_1_1util_test_a9e7d593af72519ead8d188becaa1c671_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classutil_1_1util_test_aaa8556f9ef98f63b750e50af6c3484d1}{
 \index{util::utilTest@{util::utilTest}!hourDiff@{hourDiff}}
 \index{hourDiff@{hourDiff}!util::utilTest@{util::utilTest}}
 \subsubsection[{hourDiff}]{\setlength{\rightskip}{0pt plus 5cm}static int util.utilTest.hourDiff (
@@ -174,9 +248,10 @@ Gr√°fico de llamadas para esta funci√≥n:\nopagebreak
 \item[{int}]{ hsS, }
 \item[{int}]{ minS}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  [static]}}\label{classutil_1_1util_test_aaa8556f9ef98f63b750e50af6c3484d1}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classutil_1_1util_test_aaa8556f9ef98f63b750e50af6c3484d1}
 hourDiff indica la cantidad de horas la cantidad de horas transcurridas entre dos fechas (fecha y hora). 
-\begin{DoxyParams}{Par√°metros}
+\begin{DoxyParams}{Parameters}
 {\em int} & diaE representa al dia de inicio. \\
 \hline
 {\em int} & mesE representa al mes de inicio. \\
@@ -200,20 +275,22 @@ hourDiff indica la cantidad de horas la cantidad de horas transcurridas entre do
 {\em int} & anio representa el anio a chequear. \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Devuelve}
+\begin{DoxyReturn}{Returns}
 int que representa la cantidad de horas que hay entre 2 fechas. 
 \end{DoxyReturn}
 
 
-Gr√°fico de llamadas a esta funci√≥n:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=318pt]{classutil_1_1util_test_aaa8556f9ef98f63b750e50af6c3484d1_icgraph}
+\includegraphics[width=400pt]{classutil_1_1util_test_aaa8556f9ef98f63b750e50af6c3484d1_icgraph}
 \end{center}
 \end{figure}
 
 
+\hypertarget{classutil_1_1util_test_a991f47fa2395bca0ddc28abb2ca2950f}{
 \index{util::utilTest@{util::utilTest}!medicPay@{medicPay}}
 \index{medicPay@{medicPay}!util::utilTest@{util::utilTest}}
 \subsubsection[{medicPay}]{\setlength{\rightskip}{0pt plus 5cm}static float util.utilTest.medicPay (
@@ -223,12 +300,13 @@ Gr√°fico de llamadas a esta funci√≥n:\nopagebreak
 \item[{int}]{ horasAlquiler, }
 \item[{float}]{ alquilerxhs}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  [static]}}\label{classutil_1_1util_test_a991f47fa2395bca0ddc28abb2ca2950f}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classutil_1_1util_test_a991f47fa2395bca0ddc28abb2ca2950f}
 Una funciÛn que permita calcular el sueldo de un m dico en funciÛn de la cantidad de\par
  consultas atendidas al mes, las obras sociales y el valor de la consulta. A este\par
  resultado se le deber· descontar la cantidad de horas que el profesional\par
  ha utilizado la clÌnica(en concepto de alquiler). 
-\begin{DoxyParams}{Par√°metros}
+\begin{DoxyParams}{Parameters}
 {\em consultas} & \\
 \hline
 {\em valor} & \\
@@ -238,25 +316,39 @@ Una funciÛn que permita calcular el sueldo de un m dico en funciÛn de la cantida
 {\em alquilerxhs} & \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Devuelve}
+\begin{DoxyReturn}{Returns}
 pago 
 \end{DoxyReturn}
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=370pt]{classutil_1_1util_test_a991f47fa2395bca0ddc28abb2ca2950f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classutil_1_1util_test_a525d627e3d989ff9190a69fe6bccffff}{
 \index{util::utilTest@{util::utilTest}!totalPay@{totalPay}}
 \index{totalPay@{totalPay}!util::utilTest@{util::utilTest}}
 \subsubsection[{totalPay}]{\setlength{\rightskip}{0pt plus 5cm}static float util.utilTest.totalPay (
 \begin{DoxyParamCaption}
 \item[{Float}]{ costoDia, }
-\item[{{\bf Pair}[$\,$]}]{ comidas, }
+\item[{{\bf Pair}\mbox{[}$\,$\mbox{]}}]{ comidas, }
 \item[{Vector$<$ {\bf Pair} $>$}]{ medicamentos, }
 \item[{int}]{ dias, }
 \item[{Float}]{ descuento}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  [static]}}\label{classutil_1_1util_test_a525d627e3d989ff9190a69fe6bccffff}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classutil_1_1util_test_a525d627e3d989ff9190a69fe6bccffff}
 Una funciÛn que permita calcular el monto total que debe abonar un paciente\par
  internado en funciÛn del costo del dÌa de internaciÛn, cantidad y costos de comidas\par
  recibidas, cantidad y costo de medicamentos recibidos. A todo esto debe calcularse un\par
  descuento correspondiente al monto que cubre la mutual. 
-\begin{DoxyParams}{Par√°metros}
+\begin{DoxyParams}{Parameters}
 {\em costoDia} & \\
 \hline
 {\em comidas} & \\
@@ -268,11 +360,23 @@ Una funciÛn que permita calcular el monto total que debe abonar un paciente\par
 {\em descuento} & \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Devuelve}
+\begin{DoxyReturn}{Returns}
 monto 
 \end{DoxyReturn}
 
 
-La documentaci√≥n para esta clase fue generada a partir del siguiente fichero:\begin{DoxyCompactItemize}
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=356pt]{classutil_1_1util_test_a525d627e3d989ff9190a69fe6bccffff_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
 \item 
-src/util/{\bf utilTest.java}\end{DoxyCompactItemize}
+src/util/\hyperlink{util_test_8java}{utilTest.java}\end{DoxyCompactItemize}
