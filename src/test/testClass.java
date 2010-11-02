@@ -57,7 +57,8 @@ import util.utilTest;
 public class testClass {
 
 	/**
-	 * 
+	 * Valida el funcionamiento de la funcion checkString dentro de la clase utilTest.<br>
+	 * Se usa clases de equivalencia con testing fuerte.
 	 */
 	@Test
 	public void checkStringTest (){
@@ -68,7 +69,8 @@ public class testClass {
 	}
 
 	/**
-	 * 
+	 * Valida el funcionamiento de la funcion checkDni dentro de la clase utilTest.<br>
+	 * Se usa clases de equivalencia con testing fuerte.
 	 */
 	@Test
 	public void checkDniTest (){
@@ -79,7 +81,8 @@ public class testClass {
 	}
 
 	/**
-	 * 
+	 * Valida el funcionamiento de la funcion checkDate dentro de la clase utilTest.<br>
+	 * Se usa tablas de desición.
 	 */
 	@Test
 	public void checkDateTest(){
@@ -98,7 +101,8 @@ public class testClass {
 	}
 
 	/**
-	 * 
+	 * Valida el funcionamiento de la funcion hourDiff dentro de la clase utilTest.<br>
+	 * Se usa tablas de desición.
 	 */
 	@Test
 	public void hourDiffTest(){
@@ -110,7 +114,8 @@ public class testClass {
 	}
 
 	/**
-	 * 
+	 * Valida el funcionamiento de la funcion daysDiff dentro de la clase utilTest.<br>
+	 * Se usa clases de equivalencia con testing fuerte.
 	 */
 	@Test
 	public void daysDiff () {                         
@@ -129,7 +134,8 @@ public class testClass {
 	 }
 
 	/**
-	 * 
+	 * Valida el funcionamiento de la funcion daysDiff dentro de la clase utilTest.<br>
+	 * Se usa testing de robustez (valor limite).
 	 */
 	@Test
 	public void checkHour () {
@@ -157,7 +163,8 @@ public class testClass {
 //	}
 
 	/**
-	 * 
+	 * Valida el funcionamiento de la funcion medicPay dentro de la clase utilTest.<br>
+	 * Se usa clases de equivalencia con testing fuerte.
 	 */
 	@Test
 	public void medicPayTest(){
@@ -187,7 +194,8 @@ public class testClass {
 	}
 
 	/**
-	 * 
+	 * Valida el funcionamiento de la funcion totalPay dentro de la clase utilTest.<br>
+	 * Se usa clases de equivalencia con testing fuerte.
 	 */
 	@Test
 	public void totalPayTest(){
