@@ -65,16 +65,19 @@ public class utilTest {
 	}
 
 	/**
-	 * 
+	 * checkDate valida que la fecha ingresada sea correcta.<br>
+	 * una fecha es correcta si el dia es menor que 28 para el mes 2 o 29 en caso de que el año sea bisiesto.<br>
+	 * el dia es menor o igual que 30 para los meses: 1, 3, 5, 7, 8, 10 y 12<br>
+	 * o el dia es menor o igual que 31 para los meses: 4, 6, 9 y 11.
 	 * @param diaA
 	 * @param mes
 	 * @param anio
-	 * @return
+	 * @return true si es valido, false si no lo es
 	 */
 	public static boolean checkDate (int diaA,int mes,int anio){
 		boolean res;
 		if(anio>=0){
-			if (esBiciesto(anio)){
+			if (esBisiesto(anio)){
 				if (mes==2){
 					res = (diaA>0&&diaA<30);
 				}else{
@@ -108,7 +111,7 @@ public class utilTest {
 	}
 
 	/**
-	* hourDiff indica la cantidad de horas de diferencia que hay entre dos fechas.
+	* hourDiff indica la cantidad de horas la cantidad de horas transcurridas entre dos fechas (fecha y hora).
 	* @param int diaE representa al dia de inicio.
 	* @param int mesE representa al mes de inicio.
 	* @param int anioE representa al anio de inicio.
@@ -134,10 +137,10 @@ public class utilTest {
 				if (hsE == 24){
 					hsE = 0;
 					diaE = diaE +1;
-					if (diaE == 29 && mesE == 2 && !esBiciesto(anioE)){
+					if (diaE == 29 && mesE == 2 && !esBisiesto(anioE)){
 						diaE = 1;
 						mesE = mesE +1;
-					} else if(diaE == 30 && mesE == 2 && esBiciesto(anioE)){ 
+					} else if(diaE == 30 && mesE == 2 && esBisiesto(anioE)){ 
 						diaE = 1;
 						mesE = mesE +1;
 					} else if (diaE == 30 && (mesE == 4 || mesE == 6 || mesE == 9 || mesE == 11)){
@@ -161,12 +164,15 @@ public class utilTest {
 	}
 	
 	/**
-	 * 
+	 * Una función que permita calcular el sueldo de un m dico en función de la cantidad de<br>
+	 * consultas  atendidas  al  mes,  las  obras  sociales  y  el  valor  de  la  consulta. A este<br>
+	 * resultado se le deberá descontar la cantidad de horas que el profesional<br>
+	 * ha utilizado la clínica(en concepto de alquiler).
 	 * @param consultas
 	 * @param valor
 	 * @param horasAlquiler
 	 * @param alquilerxhs
-	 * @return
+	 * @return pago
 	 */
 	public static float medicPay (Vector<Pair> consultas, float valor, int horasAlquiler, float alquilerxhs) {
 		float sueldo = 0;
@@ -182,13 +188,16 @@ public class utilTest {
 	}
 
 	/**
-	 * 
+	 * Una  función  que  permita  calcular  el  monto  total  que  debe  abonar  un  paciente<br>
+	 * internado en función del costo del día de internación, cantidad y costos de comidas<br>
+	 * recibidas, cantidad y costo de medicamentos recibidos. A todo esto debe calcularse un<br>
+	 * descuento correspondiente al monto que cubre la mutual.
 	 * @param costoDia
 	 * @param comidas
 	 * @param medicamentos
 	 * @param dias
 	 * @param descuento
-	 * @return
+	 * @return monto
 	 */
 	public static float totalPay (Float costoDia, Pair[] comidas, Vector<Pair> medicamentos, int dias, Float descuento ) {
 		if(costoDia <= 0  || dias <= 0 || descuento <= 0)
@@ -308,11 +317,11 @@ public class utilTest {
 	}
 	
 	/**
-	* esBiciesto indica si un anio es biciesto.
+	* esBisiesto indica si un anio es biciesto.
 	* @param int anio representa el anio a chequear.
 	* @return True si el anio es biciesto o de lo contrario False.
 	*/
-	private static boolean esBiciesto(int anio){
+	private static boolean esBisiesto(int anio){
 		boolean res = true;
 		if (anio % 400 == 0){
 	       res = true;
