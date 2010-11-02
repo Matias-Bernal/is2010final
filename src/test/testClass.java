@@ -1,3 +1,25 @@
+/** @mainpage Test Class
+*
+* This is a example program to demonstrate the documentation tool Doxygen.<br>See the corresponding Doxygen tutorial on <a href="http://www.cypax.net">www.cypax.net</a>
+* <br>This program will sort arrays of integer by using different sorting algorithms.
+*
+* <img src="application_screenshot.jpg" alt="Screenshot">
+*
+* @author Philipp Bank
+**/
+
+
+/**
+* @file testClass.java
+*
+* @brief This file contains the DoxygenExample class with the main() function.
+*
+* @author Philipp Bank, www.cypax.net\n
+*
+* @date June, 18th 2006 - first version
+* @date June, 19th 2006 - some modifications, multi-threading
+*
+**/
 package test;
 
 import static org.junit.Assert.*;
