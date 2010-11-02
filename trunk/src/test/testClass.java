@@ -1,24 +1,28 @@
 /** @mainpage Test Class
 *
-* This is a example program to demonstrate the documentation tool Doxygen.<br>See the corresponding Doxygen tutorial on <a href="http://www.cypax.net">www.cypax.net</a>
+* Este programa implementa unas validaciones con la herramienta jUnit de la clase utilTest,
 * <br>This program will sort arrays of integer by using different sorting algorithms.
 *
-* <img src="application_screenshot.jpg" alt="Screenshot">
+* <img src="unrc.jpg" alt="UNRC">
 *
-* @author Philipp Bank
+* @author 	BERNAL, Matias\n
+*		  	BRESSAN, Gonzalo\n
+*			JAULE, Marcos\n
+*			ODORIZZI, Eduardo
 **/
 
 
 /**
 * @file testClass.java
 *
-* @brief This file contains the DoxygenExample class with the main() function.
+* @brief Este archivos contiene la implementacion de las pruebas.
 *
-* @author Philipp Bank, www.cypax.net\n
+* @author 	BERNAL, Matias\n
+*		  	BRESSAN, Gonzalo\n
+*			JAULE, Marcos\n
+*			ODORIZZI, Eduardo
 *
-* @date June, 18th 2006 - first version
-* @date June, 19th 2006 - some modifications, multi-threading
-*
+* @date November, 1st 2010
 **/
 package test;
 
@@ -33,6 +37,9 @@ import util.utilTest;
 
 public class testClass {
 
+	/**
+	 * 
+	 */
 	@Test
 	public void checkStringTest (){
 		assertFalse("String incorrecto. Es vacío",utilTest.checkString(""));
@@ -41,6 +48,9 @@ public class testClass {
 		assertFalse("String incorrecto. Longitud invalida",utilTest.checkString("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"));
 	}
 
+	/**
+	 * 
+	 */
 	@Test
 	public void checkDniTest (){
 		assertTrue("Dni correcto",utilTest.checkDni("10.234.456"));
@@ -49,6 +59,9 @@ public class testClass {
 		assertFalse("Dni incorrecto. Longitud invalida",utilTest.checkDni("12.345.6788"));
 	}
 
+	/**
+	 * 
+	 */
 	@Test
 	public void checkDateTest(){
 		assertFalse("Dia negativo",utilTest.checkDate(-1, 12, 2010));
@@ -65,6 +78,9 @@ public class testClass {
 		assertTrue("El año 2000 es bisiesto, fecha correcta",utilTest.checkDate(29, 2, 2000));
 	}
 
+	/**
+	 * 
+	 */
 	@Test
 	public void hourDiffTest(){
 		// controlar fecha y horas
@@ -74,6 +90,9 @@ public class testClass {
 		assertEquals("Fechas iguales y hora de Entrada mayor que la hora de salida",-1, utilTest.hourDiff(10,1,2010,14,00,10,1,2010,10,00));
 	}
 
+	/**
+	 * 
+	 */
 	@Test
 	public void daysDiff () {                         
 		assertEquals (3,utilTest.daysDiff(12,11,1987,9,0,15,11,1987,8,0));
@@ -90,6 +109,9 @@ public class testClass {
 		assertEquals (1,utilTest.daysDiff(12,11,1987,11,0,12,11,1987,12,0));
 	 }
 
+	/**
+	 * 
+	 */
 	@Test
 	public void checkHour () {
 	   assertTrue("Hora correcta",utilTest.checkHour(12,0));
@@ -115,6 +137,9 @@ public class testClass {
 //		assertEquals("Consultas incorrect, cantida de consultas negativo y descuento negativo",1,9, utilTest. consydesc(-2,-5));
 //	}
 
+	/**
+	 * 
+	 */
 	@Test
 	public void medicPayTest(){
 		// controlar fecha y horas
@@ -142,6 +167,9 @@ public class testClass {
 		assertEquals("Salida Correcta",1.1,utilTest.medicPay(consultas,3,2,2),1e-2);
 	}
 
+	/**
+	 * 
+	 */
 	@Test
 	public void totalPayTest(){
 		Pair[]comidas = new Pair[4];
