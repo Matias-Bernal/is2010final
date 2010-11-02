@@ -13,16 +13,14 @@
 **/
 
 package util;
-
 /**
-* @class Pair
+*@class Pair
 * 
 * @brief La clase pair implementa el tipo Par
 *
 * El tipo par representa dos números escritos en un cierto orden.<br>
 * Usualmente están escritos entre paréntesis, así: (4,5) 
 */
-
 public class Pair {
 	
 	private int x;
