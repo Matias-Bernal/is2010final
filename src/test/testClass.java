@@ -1,6 +1,23 @@
-/** @mainpage Test Class
+/**@mainpage
 *
-* Este programa implementa unas validaciones con la herramienta jUnit de la clase utilTest.
+*  Class relations expressed via an inline dot graph:
+*  \dot
+*  digraph example {
+*      node [shape=record, fontname=Helvetica, fontsize=10];
+*      a [ label="testClass" URL="\ref testClass"];
+*      b [ label="utilTest" URL="\ref utilTest"];
+*      c [ label="Pair" URL="\ref Pair"];
+*      a -> b [ arrowhead="open", style="dashed" ]
+*      a -> c [ arrowhead="open", style="dashed" ]
+*      b -> c [ arrowhead="open", style="dashed" ];
+*  }
+*  \enddot
+*  Note that the classes in the above graph are clickable 
+*  (in the HTML output).
+*
+*
+* This is a example program to demonstrate the documentation tool Doxygen.<br>See the corresponding Doxygen tutorial on <a href="http://www.cypax.net">www.cypax.net</a>
+* <br>This program will sort arrays of integer by using different sorting algorithms.
 *
 * <img src="unrc.jpg" alt="UNRC">
 *
