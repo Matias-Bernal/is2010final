@@ -54,6 +54,14 @@ import org.junit.Test;
 import util.Pair;
 import util.utilTest;
 
+/**
+* @class testClass
+* 
+* @brief La clase testClass declara una serie de metodos en jUnit<br>
+* para verficar el correcto funcionamiento de las funciones de validacion<br>
+* de la clase utilTest.<br>
+*
+*/
 public class testClass {
 
 	/**
